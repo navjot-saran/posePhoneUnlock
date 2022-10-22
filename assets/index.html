@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- <img id="lock-screen" src="assets/locked.png" onclick="unlockScreen()" /> -->
+    <img id="lock-screen" src="assets/locked.png" />
+    <div id="app-container">
+      <div><canvas id="canvas"></canvas></div>
+
+      <!-- Result div displayed on the screen -->
+      <div id="result-timer-wrapper">
+        <div id="result"></div>
+        <div id="app"></div>
+      </div>
+      
+
+      <div id="pass-container">
+        <!-- Password field -->
+        Password: <input type="password" value="" id="myInput" />
+        <!-- An element to toggle between password visibility -->
+        <div>
+          <input type="checkbox" onclick="showPasswordToggler()" />Show Password
+        </div>
+
+        <input
+          id="login-btn"
+          type="submit"
+          value="Login"
+          onclick="matchPassword()"
+        />
+      </div>
+
+      <div id="btn-container">
+        <button id="resume-btn" type="button" onclick="init()">Resume</button>
+        <button id="stop-btn" type="button-stop" onclick="pause()">Stop</button>
+      </div>
+
+      <div id="label-container"></div>
+    </div>
+
+    <img id="home-screen" src="assets/unlocked.png" onclick="" />
+  </body>
+</html>
